@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/employee-service/employee-service.iml" filepath="$PROJECT_DIR$/employee-service/employee-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reactive-dojo.iml" filepath="$PROJECT_DIR$/reactive-dojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tax-service/tax-service.iml" filepath="$PROJECT_DIR$/tax-service/tax-service.iml" />
+    </modules>
+  </component>
+</project>
