@@ -1,8 +1,8 @@
 CREATE TABLE EMPLOYEE(
-    ID          INT,
-    Name        VARCHAR2(30),
-    Tax_Id      VARCHAR2(30),
-    Role        VARCHAR2(30)
+    ID          LONG AUTO_INCREMENT PRIMARY KEY,
+    Name        VARCHAR2(20),
+    Tax_Id      VARCHAR2(50),
+    Role        VARCHAR2(50)
 );
 
 insert into employee

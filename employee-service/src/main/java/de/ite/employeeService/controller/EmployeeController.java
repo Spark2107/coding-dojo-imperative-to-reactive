@@ -49,11 +49,18 @@ public class EmployeeController {
     }
 
     /*
-     * Update tax records for all employees
+     * Update employee
      */
-    @GetMapping("/update/employee/tax")
+    @PostMapping("/employees/{id}")
+    Employee updateEmployee(@PathVariable Long id, @RequestBody Employee newEmployee) {
+        return employeeService.updateEmployee(id, newEmployee);
+    }
+
+    /*
+     * Update tax id for all employees
+     */
+    @GetMapping("/employees/update/tax")
     List<Employee> updateTaxIds() {
         return employeeService.updateEmployeeTaxIDs();
     }
-
 }

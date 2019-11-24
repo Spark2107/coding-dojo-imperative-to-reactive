@@ -22,7 +22,7 @@ public class TaxIdController {
     @GetMapping("/{name}")
     public String getNewTaxId(@PathVariable("name") String name) throws InterruptedException {
         String taxId = taxIds.get(name);
-        if (taxId.equals(""))
+        if (taxId == null || taxId.equals(""))
             taxId = UUID.randomUUID().toString();
         taxIds.put(name, taxId);
         sleep(1000);

@@ -1,13 +1,12 @@
 package de.ite.employeeService.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "EMPLOYEE")
 public class Employee {
     @Id
-    private Integer id;
+    private Long id;
     private String name;
     private String taxId;
     private String role;
@@ -21,11 +20,11 @@ public class Employee {
     public Employee() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

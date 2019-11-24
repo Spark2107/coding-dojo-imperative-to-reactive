@@ -68,6 +68,14 @@ public class EmployeeService {
         );
     }
 
+    public Employee updateEmployee(Long id, Employee newEmployee) {
+        Employee employee = findEmployee(id);
+        if (newEmployee.getName() != null && !newEmployee.getName().equals("")) employee.setName(newEmployee.getName());
+        if (newEmployee.getRole() != null && !newEmployee.getRole().equals("")) employee.setRole(newEmployee.getRole());
+        if (newEmployee.getTaxId() != null && !newEmployee.getTaxId().equals("")) employee.setTaxId(newEmployee.getTaxId());
+        return save(employee);
+    }
+
     public List<Employee> updateEmployeeTaxIDs() {
         List<Employee> employees = findAllEmployees();
         for (Employee e : employees) {
