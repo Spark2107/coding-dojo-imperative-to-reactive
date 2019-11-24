@@ -28,7 +28,7 @@ public class EmployeeController {
      * Find an employee by ID
      */
     @GetMapping("/employees/{id}")
-    public Employee getEmployee(@PathVariable Long id) {
+    public Employee getEmployee(@PathVariable int id) {
         return employeeService.findEmployee(id);
     }
 
@@ -52,7 +52,7 @@ public class EmployeeController {
      * Update employee
      */
     @PostMapping("/employees/{id}")
-    Employee updateEmployee(@PathVariable Long id, @RequestBody Employee newEmployee) {
+    Employee updateEmployee(@PathVariable int id, @RequestBody Employee newEmployee) {
         return employeeService.updateEmployee(id, newEmployee);
     }
 

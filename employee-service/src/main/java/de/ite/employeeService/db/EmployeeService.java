@@ -27,7 +27,7 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    public Employee findEmployee(Long id) {
+    public Employee findEmployee(int id) {
         return employeeRepository.findById(id).orElseThrow(() -> new ResponseStatusException
                 (HttpStatus.NOT_FOUND, "Could not find employee " + id));
     }
@@ -68,7 +68,7 @@ public class EmployeeService {
         );
     }
 
-    public Employee updateEmployee(Long id, Employee newEmployee) {
+    public Employee updateEmployee(int id, Employee newEmployee) {
         Employee employee = findEmployee(id);
         if (newEmployee.getName() != null && !newEmployee.getName().equals("")) employee.setName(newEmployee.getName());
         if (newEmployee.getRole() != null && !newEmployee.getRole().equals("")) employee.setRole(newEmployee.getRole());

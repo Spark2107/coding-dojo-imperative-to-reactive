@@ -1,5 +1,5 @@
 CREATE TABLE EMPLOYEE(
-    ID          LONG AUTO_INCREMENT PRIMARY KEY,
+    ID          INT AUTO_INCREMENT PRIMARY KEY,
     Name        VARCHAR2(20),
     Tax_Id      VARCHAR2(50),
     Role        VARCHAR2(50)
