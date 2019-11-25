@@ -1,5 +1,6 @@
-package de.ite.employeeService.db;
+package de.ite.employeeService.service;
 
+import de.ite.employeeService.db.EmployeeRepository;
 import de.ite.employeeService.entities.Employee;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;

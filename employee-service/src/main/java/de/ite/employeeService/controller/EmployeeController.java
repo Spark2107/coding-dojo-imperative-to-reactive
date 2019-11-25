@@ -1,6 +1,6 @@
 package de.ite.employeeService.controller;
 
-import de.ite.employeeService.db.EmployeeService;
+import de.ite.employeeService.service.EmployeeService;
 import de.ite.employeeService.entities.Employee;
 import org.springframework.web.bind.annotation.*;
 
