@@ -1,8 +1,10 @@
 package de.ite.employeeService.controller;
 
-import de.ite.employeeService.db.EmployeeService;
+import de.ite.employeeService.service.EmployeeService;
 import de.ite.employeeService.entities.Employee;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class EmployeeController {
      * List all employees
      */
     @GetMapping("/employees")
-    public List<Employee> all() {
+    public Flux<Employee> all() {
         return employeeService.findAllEmployees();
     }
 
@@ -28,7 +30,7 @@ public class EmployeeController {
      * Find an employee by ID
      */
     @GetMapping("/employees/{id}")
-    public Employee getEmployee(@PathVariable int id) {
+    public Mono<Employee> getEmployee(@PathVariable int id) {
         return employeeService.findEmployee(id);
     }
 
@@ -36,7 +38,7 @@ public class EmployeeController {
      * Find problematic records
      */
     @GetMapping("/employees/problems")
-    List<Employee> getProblematicEmployees() {
+    Flux<Employee> getProblematicEmployees() {
         return employeeService.getProblematicEmployees();
     }
 
@@ -44,7 +46,7 @@ public class EmployeeController {
      * Create a new employee, looking up their tax id
      */
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee newEmployee) {
+    Mono<Employee> newEmployee(@RequestBody Employee newEmployee) {
         return employeeService.saveNewEmployee(newEmployee);
     }
 
@@ -52,7 +54,7 @@ public class EmployeeController {
      * Update employee
      */
     @PostMapping("/employees/{id}")
-    Employee updateEmployee(@PathVariable int id, @RequestBody Employee newEmployee) {
+    Mono<Employee> updateEmployee(@PathVariable int id, @RequestBody Employee newEmployee) {
         return employeeService.updateEmployee(id, newEmployee);
     }
 
@@ -60,7 +62,7 @@ public class EmployeeController {
      * Update tax id for all employees
      */
     @GetMapping("/employees/update/tax")
-    List<Employee> updateTaxIds() {
+    Flux<Employee> updateTaxIds() {
         return employeeService.updateEmployeeTaxIDs();
     }
 }
